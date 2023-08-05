@@ -5,22 +5,17 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Person {
-
+public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    @Column(nullable = true)
     String name;
 
     @Column(nullable = true)
@@ -31,14 +26,4 @@ public class Person {
 
     @Enumerated(EnumType.STRING)
     Gender gender;
-
-    boolean isDose1taken;
-    boolean isDose2Taken;
-
-
-
-
-
-
-
 }
