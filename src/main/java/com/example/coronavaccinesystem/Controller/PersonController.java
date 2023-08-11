@@ -2,6 +2,8 @@ package com.example.coronavaccinesystem.Controller;
 
 import com.example.coronavaccinesystem.Model.Person;
 import com.example.coronavaccinesystem.Service.PersonService;
+import com.example.coronavaccinesystem.dto.RequestDto.AddPersonDto;
+import com.example.coronavaccinesystem.dto.ResponseDto.AddPersonResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +18,10 @@ public class PersonController {
     @Autowired
     PersonService personService;
     @PostMapping("/addPerson")
-    public ResponseEntity addPerson(@RequestBody Person person){
+    public ResponseEntity addPerson(@RequestBody AddPersonDto addPersonDto){
         try{
-            Person pr=personService.addPerson(person);
-            return new ResponseEntity(pr, HttpStatus.ACCEPTED);
+            AddPersonResponseDto addPersonResponseDto=personService.addPerson(addPersonDto);
+            return new ResponseEntity(addPersonResponseDto, HttpStatus.ACCEPTED);
 
         }
         catch(Exception e){

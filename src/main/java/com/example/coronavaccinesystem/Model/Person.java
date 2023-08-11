@@ -32,9 +32,14 @@ public class Person {
     @Enumerated(EnumType.STRING)
     Gender gender;
 
-    boolean isDose1taken;
-    boolean isDose2Taken;
+    boolean dose1taken;
+    boolean dose2Taken;
 
+    @OneToMany(mappedBy = "person",cascade = CascadeType.ALL)
+    List<Dose>doseList=new ArrayList<>();
+
+    @OneToOne(mappedBy = "person" ,cascade = CascadeType.ALL)
+    Certificate certificate;
 
 
 

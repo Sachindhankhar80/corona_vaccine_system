@@ -31,7 +31,4 @@ public class Dose {
     @JoinColumn
     Person person;
 
-
-
-
 }

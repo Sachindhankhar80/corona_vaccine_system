@@ -11,6 +11,7 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @Setter
 public class Certificate {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
@@ -22,4 +23,13 @@ public class Certificate {
     @OneToOne
     @JoinColumn
     Person person;
+
+
+
+
+
+
+
+
+
 }
